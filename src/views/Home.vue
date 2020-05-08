@@ -34,7 +34,6 @@ export default {
     return {
       projectList: null,
       searchItem: "",
-      temporarylisting: null,
       projectSelected: null,
       imageList: null,
       loading: true
@@ -56,10 +55,10 @@ export default {
       });
     },
     filteredData() {
-      this.temporarylisting = Object.values(this.projectList).filter(ele =>
+      let temporarylisting = Object.values(this.projectList).filter(ele =>
         ele.name.toLowerCase().includes(this.searchItem.toLowerCase())
       );
-      return this.temporarylisting;
+      return temporarylisting;
     }
   }
 };
